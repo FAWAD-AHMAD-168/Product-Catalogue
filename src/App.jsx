@@ -10,13 +10,11 @@ import FilterBar from "./components/Filterbar";
 import Footer from "./components/footer";
 
 const App = () => {
-
-   const [sortOrder, setSortOrder] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
 
   const handleSortChange = (order) => {
     setSortOrder(order);
   };
-
 
   const getSortedProducts = () => {
     const sorted = [...productsData];
@@ -28,25 +26,27 @@ const App = () => {
     return sorted;
   };
 
-
   return (
     <div className="app-container">
       <Navbar />
       <Routes>
-        <Route path="/" element={ <>  <FilterBar onSortChange={handleSortChange}/> 
-        <ProductList products={getSortedProducts()} />  
-
-        </>
-        
-        }     />
+        <Route
+          path="/"
+          element={
+            <>
+              {" "}
+              <FilterBar onSortChange={handleSortChange} />
+              <ProductList products={getSortedProducts()} />
+            </>
+          }
+        />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-       <Footer />
+      <Footer />
     </div>
   );
 };
 
 export default App;
-
