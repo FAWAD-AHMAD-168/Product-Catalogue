@@ -4,6 +4,7 @@
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  height: 370px;
 }
 
 .product-card:hover {
@@ -11,9 +12,12 @@
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 40%;
   border-radius: 8px;
+  text-align: center;
 }
 
 .product-info {

@@ -4,7 +4,7 @@ const products = [
     name: "Wireless Headphones",
     price: 59.99,
     category: "Electronics",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/download.jpeg",
     description: "High-quality sound, wireless freedom.",
   },
   {
@@ -12,7 +12,7 @@ const products = [
     name: "Leather Jacket",
     price: 120.0,
     category: "Apparel",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/ltr.jpeg",
     description: "Stylish and warm for winter.",
   },
   {
@@ -20,7 +20,7 @@ const products = [
     name: "Python Programming Book",
     price: 35.5,
     category: "Books",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/pyth.jpeg",
     description: "Master Python from beginner to expert.",
   },
   {
@@ -28,7 +28,7 @@ const products = [
     name: "Smartphone",
     price: 299.99,
     category: "Electronics",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/smt.avif",
     description: "Latest features in a compact design.",
   },
   {
