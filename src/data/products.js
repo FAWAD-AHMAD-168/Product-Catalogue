@@ -4,7 +4,7 @@ const products = [
     name: "Wireless Headphones",
     price: 59.99,
     category: "Electronics",
-    imageUrl: "/download.jpeg",
+    imageUrl: "/nn.jpeg",
     description: "High-quality sound, wireless freedom.",
   },
   {
@@ -12,15 +12,16 @@ const products = [
     name: "Leather Jacket",
     price: 120.0,
     category: "Apparel",
-    imageUrl: "/ltr.jpeg",
-    description: "Stylish and warm for winter.",
+imageUrl: "/nn.jpeg", 
+   description: "Stylish and warm for winter.",
   },
+
   {
     id: 3,
     name: "Python Programming Book",
     price: 35.5,
     category: "Books",
-    imageUrl: "/pyth.jpeg",
+    imageUrl: "/nn.jpeg",
     description: "Master Python from beginner to expert.",
   },
   {
@@ -28,7 +29,7 @@ const products = [
     name: "Smartphone",
     price: 299.99,
     category: "Electronics",
-    imageUrl: "/smt.avif",
+    imageUrl: "/nn.jpeg",
     description: "Latest features in a compact design.",
   },
   {
@@ -36,7 +37,7 @@ const products = [
     name: "Running Shoes",
     price: 75.0,
     category: "Apparel",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/nn.jpeg",
     description: "Comfortable and durable for all terrains.",
   },
   {
@@ -44,7 +45,7 @@ const products = [
     name: "Backpack",
     price: 45.0,
     category: "Apparel",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/nn.jpeg",
     description: "Spacious and trendy backpack for daily use.",
   },
   {
@@ -52,7 +53,7 @@ const products = [
     name: "Bluetooth Speaker",
     price: 49.99,
     category: "Electronics",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/nn.jpeg",
     description: "Portable speaker with powerful sound.",
   },
   {
@@ -60,7 +61,7 @@ const products = [
     name: "Notebook Set",
     price: 15.0,
     category: "Books",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "/nn.jpeg",
     description: "Set of 5 beautiful ruled notebooks.",
   }
 ];

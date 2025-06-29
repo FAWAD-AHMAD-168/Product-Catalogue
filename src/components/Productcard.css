@@ -1,10 +1,10 @@
 .product-card {
-  background-color: white;
+  background-color: rgb(225, 218, 218);
   border-radius: 8px;
-  padding: 1rem;
+  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  height: 370px;
+  
 }
 
 .product-card:hover {
@@ -13,15 +13,16 @@
 
 .product-card img {
   display: block;
-  margin: 0 auto;
-  width: 80%;
+  
+  width: 100%;
   height: 40%;
-  border-radius: 8px;
+  border-radius: 8px 8px 0px 0px;
   text-align: center;
 }
 
 .product-info {
   margin-top: 1rem;
+  padding: 1rem;
 }
 
 .product-info h2 {
@@ -41,4 +42,5 @@
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.85rem;
+  margin-top:0.5rem ;
 }
