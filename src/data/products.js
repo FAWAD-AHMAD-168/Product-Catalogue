@@ -63,7 +63,17 @@ imageUrl: "/nn.jpeg",
     category: "Books",
     imageUrl: "/nn.jpeg",
     description: "Set of 5 beautiful ruled notebooks.",
+  } ,
+  {
+    
+    id: 9,
+    name: "Programming Fundamentals",
+    price: 30.0,
+    category: "Books",
+    imageUrl: "/nn.jpeg",
+    description: "Master the fundamentals of programming.",
   }
+  
 ];
 
 export default products;

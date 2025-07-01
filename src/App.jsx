@@ -10,21 +10,42 @@ import FilterBar from "./components/Filterbar";
 import Footer from "./components/footer";
 
 const App = () => {
-  const [sortOrder, setSortOrder] = useState("");
+    const [sortOrder, setSortOrder] = useState("");
+
+  const [category, setCategory] = useState(""); 
 
   const handleSortChange = (order) => {
     setSortOrder(order);
   };
 
-  const getSortedProducts = () => {
-    const sorted = [...productsData];
-    if (sortOrder === "asc") {
-      return sorted.sort((a, b) => a.price - b.price);
-    } else if (sortOrder === "desc") {
-      return sorted.sort((a, b) => b.price - a.price);
-    }
-    return sorted;
+  const handleCategoryChange = (selectedCategory) => {
+    setCategory(selectedCategory);
   };
+
+  const getSortedProducts = () => {
+    let filtered = [...productsData];
+
+    
+    if (category && category !== "") {
+      filtered = filtered.filter((p) => p.category === category);
+    }
+
+    
+    if (sortOrder === "asc") {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === "desc") {
+      filtered.sort((a, b) => b.price - a.price);
+    }
+
+    return filtered;
+  };
+
+//RESSETTING THE FILTERS
+
+  const handleResetFilters = () => {
+  setSortOrder("");
+  setCategory("");
+};
 
   return (
     <div className="app-container">
@@ -35,7 +56,8 @@ const App = () => {
           element={
             <>
               {" "}
-              <FilterBar onSortChange={handleSortChange} />
+              <FilterBar sortvalue={sortOrder} categoryValue={category}
+               onSortChange={handleSortChange} onCategoryChange={handleCategoryChange} onReset={handleResetFilters}/>
               <ProductList products={getSortedProducts()} />
             </>
           }
