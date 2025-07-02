@@ -8,11 +8,23 @@ import Contact from "./pages/Contact";
 import "./App.css";
 import FilterBar from "./components/Filterbar";
 import Footer from "./components/footer";
+import Home from "./components/Home";
 
 const App = () => {
-    const [sortOrder, setSortOrder] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
 
-  const [category, setCategory] = useState(""); 
+  const [category, setCategory] = useState("");
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (value) => {
+    setSearchInput(value);
+  };
+
+  const handleSearchSubmit = () => {
+    setSearchTerm(searchInput.toLowerCase());
+  };
 
   const handleSortChange = (order) => {
     setSortOrder(order);
@@ -22,15 +34,24 @@ const App = () => {
     setCategory(selectedCategory);
   };
 
-  const getSortedProducts = () => {
+  const getFilteredAndSortedProducts = () => {
     let filtered = [...productsData];
 
-    
-    if (category && category !== "") {
-      filtered = filtered.filter((p) => p.category === category);
+    // ✅ Filter by category (if selected)
+    if (category) {
+      filtered = filtered.filter((product) => product.category === category);
     }
 
-    
+    // ✅ Filter by search term (name or description)
+    if (searchTerm) {
+      filtered = filtered.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.description.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // ✅ Sort by price
     if (sortOrder === "asc") {
       filtered.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "desc") {
@@ -40,12 +61,16 @@ const App = () => {
     return filtered;
   };
 
-//RESSETTING THE FILTERS
+  //RESSETTING THE FILTERS
 
   const handleResetFilters = () => {
-  setSortOrder("");
-  setCategory("");
-};
+    setSortOrder("");
+    setCategory("");
+
+    setSearchInput("");
+
+    setSearchTerm("");
+  };
 
   return (
     <div className="app-container">
@@ -55,13 +80,31 @@ const App = () => {
           path="/"
           element={
             <>
-              {" "}
-              <FilterBar sortvalue={sortOrder} categoryValue={category}
-               onSortChange={handleSortChange} onCategoryChange={handleCategoryChange} onReset={handleResetFilters}/>
-              <ProductList products={getSortedProducts()} />
+              <Home />
             </>
           }
         />
+
+        <Route
+          path="/products"
+          element={
+            <>
+              {" "}
+              <FilterBar
+                sortvalue={sortOrder}
+                categoryValue={category}
+                searchValue={searchInput}
+                onSearchChange={handleSearchChange}
+                onSearchSubmit={handleSearchSubmit}
+                onSortChange={handleSortChange}
+                onCategoryChange={handleCategoryChange}
+                onReset={handleResetFilters}
+              />
+              <ProductList products={getFilteredAndSortedProducts()} />
+            </>
+          }
+        />
+
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

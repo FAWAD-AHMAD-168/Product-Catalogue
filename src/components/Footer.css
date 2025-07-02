@@ -5,6 +5,9 @@
   padding: 1rem 0;
   margin-top: 2rem;
   font-size: 0.9rem;
+    position: relative;
+
+  bottom:0;
 }
 .reset-btn {
   padding: 6px 12px;
